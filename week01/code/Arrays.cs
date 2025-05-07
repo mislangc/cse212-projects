@@ -1,5 +1,10 @@
 public static class Arrays
 {
+    public static void Run()
+    {
+        double[] list = MultiplesOf(3, 7);
+        Console.WriteLine("<List>{" + string.Join(", ", list) + "}");
+    }
     /// <summary>
     /// This function will produce an array of size 'length' starting with 'number' followed by multiples of 'number'.  For 
     /// example, MultiplesOf(7, 5) will result in: {7, 14, 21, 28, 35}.  Assume that length is a positive
@@ -12,8 +17,15 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        var result = new double[length];
+        var multiplier = 1;
+        for (int i = 0; i < length; i++)
+        {
+            var value = number * multiplier++;
+            result[i] = value;
+        }
 
-        return []; // replace this return statement with your own
+        return result; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +41,14 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        List<int> values = data.GetRange(data.Count - amount, amount);
+        List<int> initValues = data.GetRange(0, data.Count - amount);
+
+        data.Clear();
+
+        data.InsertRange(0, values);
+        data.InsertRange(amount, initValues);
+
+        return;
     }
 }
