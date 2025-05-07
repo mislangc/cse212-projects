@@ -12,14 +12,24 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // Make a new list to store the multiple values
         var result = new double[length];
+
+        //Define a constant multiplier starting at 1
         var multiplier = 1;
+
+        //Loop for getting the number and multiplying it to the multiplier. Length variable will be the amount this loop will repeat.
         for (int i = 0; i < length; i++)
         {
+            //After multiplying, add 1 to the multiplier
             var value = number * multiplier++;
+
+            //Store the product in a variable called value and add it to the list at index i
             result[i] = value;
         }
 
+        //Return the list of multipliers after the specified length is supplied
         return result; // replace this return statement with your own
     }
 
@@ -36,12 +46,20 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        //Get the values being rotated to the front of the list
         List<int> values = data.GetRange(data.Count - amount, amount);
+
+        //Get the values to be adjusted to the right
         List<int> initValues = data.GetRange(0, data.Count - amount);
 
+        //Delete all the items in the list
         data.Clear();
 
+        //Insert the rotated values at the beginning of the list
         data.InsertRange(0, values);
+
+        //Insert the rest of the values at the end of the last added values
         data.InsertRange(amount, initValues);
 
         return;
