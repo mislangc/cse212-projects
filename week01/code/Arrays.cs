@@ -1,10 +1,5 @@
 public static class Arrays
 {
-    public static void Run()
-    {
-        double[] list = MultiplesOf(3, 7);
-        Console.WriteLine("<List>{" + string.Join(", ", list) + "}");
-    }
     /// <summary>
     /// This function will produce an array of size 'length' starting with 'number' followed by multiples of 'number'.  For 
     /// example, MultiplesOf(7, 5) will result in: {7, 14, 21, 28, 35}.  Assume that length is a positive
