@@ -1,6 +1,21 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO Problem 1 - Run test cases and record any defects the test code finds in the comment above the test method.
+
+
+// First test: Only TestTakingTurnsQueue_Empty passed (7 tests, 1 succeeded)
+
+//Defect 1: The Enqueue method is adding person in front of the queue
+
+// Solution try 1: Changed .Insert to .Add in the Enqueue function in PersonQueue.cs 
+// Result from try 1: TestTakingTurnsQueue_FiniteRepetition, TestTakingTurnsQueue_AddPlayerMidway now passed (7 tests, 3 succeeded)
+
+//Defect 2: People with 0 turns or less do not have infinite turns
+
+//Solution try 2: Add less or equal to zero Turns condition (person.Turns <= 0) in GetNextPerson function in TakingTurnsQueue.cs
+//Result from try 2: TestTakingTurnsQueue_ForeverZero, TestTakingTurnsQueue_ForeverNegative now passed (7 tests, 5 succeeded)
+
+
 // DO NOT MODIFY THE CODE IN THE TESTS in this file, just the comments above the tests. 
 // Fix the code being tested to match requirements and make all tests pass. 
 
