@@ -39,12 +39,11 @@ public class LinkedList : IEnumerable<int>
             _head = newNode;
             _tail = newNode;
         }
-        // If the list is not empty, then only head will be affected.
         else
         {
-            newNode.Prev = _tail; // Connect new node to the previous head
-            _tail.Next = newNode; // Connect the previous head to the new node
-            _tail = newNode; // Update the head to point to the new node
+            newNode.Prev = _tail;
+            _tail.Next = newNode;
+            _tail = newNode;
         }
     }
 
@@ -85,8 +84,8 @@ public class LinkedList : IEnumerable<int>
         }
         else if (_tail is not null)
         {
-            _tail.Prev!.Next = null; // Disconnect the second node from the first node
-            _tail = _tail.Prev; // Update the head to point to the second node
+            _tail.Prev!.Next = null;
+            _tail = _tail.Prev;
         }
     }
 
