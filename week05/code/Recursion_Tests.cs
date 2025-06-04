@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // DO NOT MODIFY THIS FILE
@@ -141,6 +142,7 @@ public class WildcardBinaryTests
             "110100",
             "110101"
         };
+        Debug.WriteLine(results.Count);
         CollectionAssert.AreEqual(expected, results);
     }
 
