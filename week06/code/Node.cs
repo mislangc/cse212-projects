@@ -21,6 +21,11 @@ public class Node
             else
                 Left.Insert(value);
         }
+        // Don't insert (return) if value is in tree
+        else if (value == Data)
+        {
+            return;
+        }
         else
         {
             // Insert to the right
@@ -34,12 +39,51 @@ public class Node
     public bool Contains(int value)
     {
         // TODO Start Problem 2
-        return false;
+        if (value == Data)
+        {
+            return true;
+        }
+        else if (value < Data)
+        {
+            if (Left is null)
+                return false;
+            else
+                return Left!.Contains(value);
+        }
+        else if (value > Data)
+        {
+            if (Right is null)
+                return false;
+            else
+                return Right!.Contains(value);
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public int GetHeight()
     {
         // TODO Start Problem 4
-        return 0; // Replace this line with the correct return statement(s)
+        int leftHeight = 0;
+        int rightHeight = 0;
+
+        if (Left is not null)
+        {
+            leftHeight += Left.GetHeight();
+        }
+        if (Right is not null)
+        {
+            rightHeight += Right.GetHeight();
+        }
+
+        if (leftHeight > rightHeight)
+            return 1 + leftHeight;
+        else if (leftHeight < rightHeight)
+            return 1 + rightHeight;
+        else if (leftHeight == rightHeight)
+            return 1 + leftHeight;
+        else return 1;
     }
 }
